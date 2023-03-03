@@ -1,0 +1,131 @@
+2c#
+
+num = int(input("Digite um número: "))
+
+fib1 = 0
+fib2 = 1
+fib = fib1 + fib2
+
+while fib < num:
+    fib1 = fib2
+    fib2 = fib
+    fib = fib1 + fib2
+
+if fib == num:
+    print(f"O número {num} pertence à sequência de Fibonacci.")
+else:
+    print(f"O número {num} não pertence à sequência de Fibonacci.")
+    
+    
+    3 pytho
+    
+    import json
+
+# lê o arquivo JSON com os dados de faturamento diário
+with open("faturamento.json", "r") as f:
+    faturamento = json.load(f)
+
+# inicializa as variáveis de mínimo, máximo e soma do faturamento
+min_faturamento = float("inf")
+max_faturamento = float("-inf")
+soma_faturamento = 0
+
+# inicializa a variável de contagem de dias acima da média
+dias_acima_media = 0
+
+# inicializa a variável de contagem de dias úteis
+dias_uteis = 0
+
+# itera sobre os valores de faturamento diário
+for dia, valor in faturamento.items():
+    # verifica se o valor é menor ou maior que os valores já registrados
+    if valor < min_faturamento:
+        min_faturamento = valor
+    if valor > max_faturamento:
+        max_faturamento = valor
+
+    # soma o valor ao total de faturamento
+    soma_faturamento += valor
+
+    # verifica se o dia é útil (dias da semana)
+    if dia not in ["sabado", "domingo"]:
+        dias_uteis += 1
+        # verifica se o valor é maior que a média mensal
+        if valor > (soma_faturamento / dias_uteis):
+            dias_acima_media += 1
+
+# imprime os resultados
+print(f"Menor valor de faturamento diário: R${min_faturamento:.2f}")
+print(f"Maior valor de faturamento diário: R${max_faturamento:.2f}")
+print(f"Número de dias úteis acima da média mensal: {dias_acima_media}")
+import json
+
+# lê o arquivo JSON com os dados de faturamento diário
+with open("faturamento.json", "r") as f:
+    faturamento = json.load(f)
+
+# inicializa as variáveis de mínimo, máximo e soma do faturamento
+min_faturamento = float("inf")
+max_faturamento = float("-inf")
+soma_faturamento = 0
+
+# inicializa a variável de contagem de dias acima da média
+dias_acima_media = 0
+
+# inicializa a variável de contagem de dias úteis
+dias_uteis = 0
+
+# itera sobre os valores de faturamento diário
+for dia, valor in faturamento.items():
+    # verifica se o valor é menor ou maior que os valores já registrados
+    if valor < min_faturamento:
+        min_faturamento = valor
+    if valor > max_faturamento:
+        max_faturamento = valor
+
+    # soma o valor ao total de faturamento
+    soma_faturamento += valor
+
+    # verifica se o dia é útil (dias da semana)
+    if dia not in ["sabado", "domingo"]:
+        dias_uteis += 1
+        # verifica se o valor é maior que a média mensal
+        if valor > (soma_faturamento / dias_uteis):
+            dias_acima_media += 1
+
+# imprime os resultados
+print(f"Menor valor de faturamento diário: R${min_faturamento:.2f}")
+print(f"Maior valor de faturamento diário: R${max_faturamento:.2f}")
+print(f"Número de dias úteis acima da média mensal: {dias_acima_media
+
+4  
+
+faturamento = {
+    "SP": 67836.43,
+    "RJ": 36678.66,
+    "MG": 29229.88,
+    "ES": 27165.48,
+    "Outros": 19849.53
+}
+
+# calcula o valor total do faturamento mensal
+total_faturamento = sum(faturamento.values())
+
+# itera sobre os itens do dicionário ordenados pelo valor de faturamento
+for estado, valor in sorted(faturamento.items(), key=lambda x: x[1], reverse=True):
+    # calcula o percentual de representação
+    percentual = (valor / total_faturamento) * 100
+
+    # imprime o resultado formatado
+    print(f"{estado}: {percentual:.2f}%")
+    
+    5
+    
+    # recebe a string como entrada
+string = input("Digite uma string: ")
+
+# inverte a string utilizando slicing
+string_invertida = string[::-1]
+
+# imprime a string invertida
+print(string_invertida)
